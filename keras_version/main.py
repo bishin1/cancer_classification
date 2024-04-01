@@ -10,7 +10,7 @@ import nsml
 from nsml.constants import DATASET_PATH, GPU_NUM 
 import math
 
-######################## DONOTCHANGE ###########################
+###################################################
 def bind_model(model):
     def save(dir_name):
         os.makedirs(dir_name, exist_ok=True)
@@ -115,7 +115,7 @@ if __name__ == '__main__':
                 metrics=['accuracy'])
 
 
-    ############ DONOTCHANGE ###############
+    #######################################
     bind_model(model)
     if config.pause: ## test mode 일때는 여기만 접근
         print('Inferring Start...')
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     if config.mode == 'train': ### training mode 일때는 여기만 접근
         print('Training Start...')
 
-        ############ DONOTCHANGE: Path loader ###############
+        ##############################################
         root_path = os.path.join(DATASET_PATH,'train')        
         image_keys, image_path = path_loader(root_path)
         labels = label_loader(root_path, image_keys)
